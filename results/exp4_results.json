@@ -1,0 +1,102 @@
+{
+  "metrics_by_F": {
+    "0.1": {
+      "gbs_boost": {
+        "annual_return_mean": -0.2692553781264545,
+        "annual_return_std": 0.05225200131247752,
+        "weighted_density_mean": 0.5010522338151372,
+        "runtime_s": 5.415223617001175,
+        "H": 4
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.28005555786920494,
+        "annual_return_std": 0.036991571373119855,
+        "weighted_density_mean": 0.5648382865613599,
+        "runtime_s": 4.3752322219988855,
+        "H": 4
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.23483043506346546,
+        "annual_return_std": 0.11546196307194122,
+        "weighted_density_mean": 0.4118811884681867,
+        "runtime_s": 2.68671685800291,
+        "H": 4
+      }
+    },
+    "1.0": {
+      "gbs_boost": {
+        "annual_return_mean": -0.3507633604677937,
+        "annual_return_std": 0.0726385386576243,
+        "weighted_density_mean": 0.49386091159873374,
+        "runtime_s": 11.035427273996902,
+        "H": 41
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.20297755164214304,
+        "annual_return_std": 0.017452918727375134,
+        "weighted_density_mean": 0.6690111211348208,
+        "runtime_s": 15.920574427000247,
+        "H": 41
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.3269065129172412,
+        "annual_return_std": 0.02365231217345377,
+        "weighted_density_mean": 0.4740977963165176,
+        "runtime_s": 8.358206336000876,
+        "H": 41
+      }
+    },
+    "10.0": {
+      "gbs_boost": {
+        "annual_return_mean": -0.3194817317663929,
+        "annual_return_std": 0.024980573941939945,
+        "weighted_density_mean": 0.48421032118497137,
+        "runtime_s": 98.1929890140018,
+        "H": 406
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.17722872862843256,
+        "annual_return_std": 0.028555275241356183,
+        "weighted_density_mean": 0.6844492943106116,
+        "runtime_s": 322.9082955189988,
+        "H": 406
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.31480240094219425,
+        "annual_return_std": 0.05758071603436206,
+        "weighted_density_mean": 0.4702967011034848,
+        "runtime_s": 91.47280453499843,
+        "H": 406
+      }
+    },
+    "100.0": {
+      "gbs_boost": {
+        "annual_return_mean": -0.36116649875017437,
+        "annual_return_std": 0.020789743767713594,
+        "weighted_density_mean": 0.473317165282424,
+        "runtime_s": 629.2388573229982,
+        "H": 4062
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.15080855130861348,
+        "annual_return_std": 0.0,
+        "weighted_density_mean": 0.684745505616322,
+        "runtime_s": 651.1673123629989,
+        "H": 4062
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.28132264919446476,
+        "annual_return_std": 0.0007866381695326181,
+        "weighted_density_mean": 0.46455967750593113,
+        "runtime_s": 244.89723774999948,
+        "H": 4062
+      }
+    }
+  },
+  "assumptions": [
+    "N=15 instead of paper N=30 (compute constraint)",
+    "F subset [0.1, 1, 10, 100] instead of [0.01, 0.1, 1, 10, 100]",
+    "n_runs=3 per configuration",
+    "Runtime measures classical emulation, not quantum hardware"
+  ]
+}
