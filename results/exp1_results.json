@@ -1,0 +1,63 @@
+{
+  "spectral": {
+    "annual_return_mean": -0.17294687611380427,
+    "annual_return_std": 0.05235173833377696,
+    "sharpe_ratio_mean": -0.7324917963341273,
+    "sharpe_ratio_std": 0.2713813822349172,
+    "weighted_density_mean": 0.44005931325028835,
+    "jaccard_mean": 0.5416579115695463,
+    "n_runs": 8
+  },
+  "sponge": {
+    "annual_return_mean": -0.23697035022583768,
+    "annual_return_std": 0.01611619711006297,
+    "sharpe_ratio_mean": -0.972374973624828,
+    "sharpe_ratio_std": 0.07886208207008052,
+    "weighted_density_mean": 0.48425952420239915,
+    "jaccard_mean": 0.4782861973846458,
+    "n_runs": 8
+  },
+  "gbs_boost": {
+    "annual_return_mean": -0.19339365224164373,
+    "annual_return_std": 0.06567655724725052,
+    "sharpe_ratio_mean": -0.8081954149644218,
+    "sharpe_ratio_std": 0.2914656265627406,
+    "weighted_density_mean": 0.5531925973989813,
+    "jaccard_mean": 0.30611293348759655,
+    "n_runs": 5
+  },
+  "gbs_roots": {
+    "annual_return_mean": -0.2069936808791084,
+    "annual_return_std": 0.07751943017858241,
+    "sharpe_ratio_mean": -1.038426255009878,
+    "sharpe_ratio_std": 0.42656740064759724,
+    "weighted_density_mean": 0.7279861875520737,
+    "jaccard_mean": 0.35317892353977254,
+    "n_runs": 5
+  },
+  "qic_gbs": {
+    "annual_return_mean": -0.19918303471174806,
+    "annual_return_std": 0.06194591999002148,
+    "sharpe_ratio_mean": -0.8782819339510357,
+    "sharpe_ratio_std": 0.3198837662944859,
+    "weighted_density_mean": 0.5411224810639209,
+    "jaccard_mean": 0.2987960683685837,
+    "n_runs": 5
+  },
+  "welch_return_roots_vs_sponge": {
+    "t_stat": 0.7640201401453947,
+    "p_value": 0.4855401697790643,
+    "significant_at_0.05": 0
+  },
+  "welch_sharpe_roots_vs_sponge": {
+    "t_stat": -0.30670677952991604,
+    "p_value": 0.7738194918782978,
+    "significant_at_0.05": 0
+  },
+  "assumptions": [
+    "N=30 used instead of paper N=100 (compute constraint)",
+    "yfinance replaces CRSP",
+    "Classical GBS emulator replaces quantum Strawberry Fields",
+    "n_runs_gbs=5 instead of paper 20; n_runs_classical=8 instead of 100"
+  ]
+}
