@@ -45,54 +45,8 @@ python exp/exp5_universe_scaling.py 2>&1 | tee results/exp5_log.txt
 echo ""
 
 # ── Generate RESULTS.md ───────────────────────────────────────────────────────
-python - << 'PYEOF'
-import json, os, sys
-
-lines = [
-    "# Results Summary",
-    "",
-    "Paper: *Gaussian Boson Sampling for Asset Clustering in Statistical Arbitrage Portfolios*",
-    "",
-    "**Note**: Results use reduced parameters (N=15–30 vs paper N=50–100; n_runs=3–8 vs paper 20–100).",
-    "Classical GBS emulator replaces quantum Strawberry Fields sampling.",
-    "Data source: yfinance (paper uses CRSP).",
-    "",
-]
-
-for exp_id in range(1, 6):
-    path = f"results/exp{exp_id}_results.json"
-    lines.append(f"## Experiment {exp_id}")
-    if os.path.exists(path):
-        with open(path) as f:
-            data = json.load(f)
-        lines.append("```json")
-        lines.append(json.dumps(data, indent=2, default=str)[:3000])
-        lines.append("```")
-    else:
-        lines.append(f"*Results not found at {path}*")
-    lines.append("")
-
-lines += [
-    "## Documented Deviations from Paper",
-    "",
-    "| # | Deviation | Impact |",
-    "|---|-----------|--------|",
-    "| 1 | Classical GBS density-weighted emulator (not exact quantum SF) | Qualitative behavior preserved |",
-    "| 2 | yfinance instead of CRSP | Different universe composition |",
-    "| 3 | N=15–30 instead of paper N=50–100 | Results not directly comparable |",
-    "| 4 | n_runs=3–8 instead of paper 20–100 | Higher variance in estimates |",
-    "| 5 | Displacement arm (Exp2) not implemented | Only uncompensated loss tested |",
-    "| 6 | B=50–100 permutations for K estimation (paper B=1000) | Less accurate K |",
-    "| 7 | Natural log (paper log base unspecified) | Minor numerical difference |",
-    "| 8 | Risk-free rate = 0 (paper unspecified) | Minor Sharpe effect |",
-    "| 9 | stop-win 2%, 3-day hold, equal weights within legs | Per paper |",
-    "",
-]
-
-with open("results/RESULTS.md", "w") as f:
-    f.write("\n".join(lines))
-print("Generated results/RESULTS.md")
-PYEOF
+echo "--- Generating RESULTS.md ---"
+python scripts/generate_results_md.py
 
 echo ""
 echo "====================================================================="
