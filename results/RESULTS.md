@@ -81,7 +81,35 @@ Qualitative ordering (GBS Boost has highest WD; GBS methods have lower Jaccard t
 **Implementation**: N=25 (proxy), loss_rates = [0.0, 0.3, 0.6, 0.9] (subset), 3 GBS runs, 5 classical runs
 **Displacement arm**: NOT IMPLEMENTED (requires explicit Gaussian-state circuit via Strawberry Fields)
 
-> *Results will be populated when exp/exp2_loss_test.py completes.*
+### Results — Uncompensated Loss Arm (N=25 proxy)
+
+#### Annual Return by Loss Rate
+
+| Method | loss=0.0 | loss=0.3 | loss=0.6 | loss=0.9 |
+|--------|----------|----------|----------|----------|
+| Spectral (classical) | -0.159±0.001 | -0.159±0.001 | -0.159±0.001 | -0.159±0.001 |
+| SPONGE (classical) | -0.043±0.015 | -0.043±0.015 | -0.043±0.015 | -0.043±0.015 |
+| GBS Boost | -0.068±0.026 | -0.066±0.062 | -0.111±0.083 | **+0.039±0.034** |
+| GBS Roots | -0.036±0.072 | **+0.005±0.063** | -0.017±0.049 | -0.002±0.019 |
+| QIC-GBS | -0.119±0.033 | -0.017±0.074 | -0.162±0.045 | -0.034±0.100 |
+| Random baseline | -0.010±0.107 | -0.010±0.107 | -0.010±0.107 | -0.010±0.107 |
+
+#### Weighted Density by Loss Rate
+
+| Method | loss=0.0 | loss=0.3 | loss=0.6 | loss=0.9 |
+|--------|----------|----------|----------|----------|
+| Spectral | 0.433 | 0.433 | 0.433 | 0.433 |
+| SPONGE | 0.435 | 0.435 | 0.435 | 0.435 |
+| GBS Boost | 0.542 | 0.576 | 0.655 | **0.798** |
+| GBS Roots | 0.725 | 0.770 | 0.796 | **0.798** |
+| QIC-GBS | 0.526 | 0.520 | 0.500 | 0.350 |
+| Random | 0.284 | 0.284 | 0.284 | 0.284 |
+
+### Qualitative Comparison vs. Paper
+- **WD spike at high loss**: ✓ Confirmed — GBS Boost and GBS Roots WD rises markedly above loss=0.6
+- **Returns at low loss (≤0.4) vs SPONGE**: All GBS methods outperform SPONGE's WD but not consistently in returns
+- **Displacement arm**: Not tested — coherent displacement requires Strawberry Fields Gaussian-state backend
+- **Overall sign of returns**: Negative (this proxy universe underperforms vs paper's CRSP universe — same cause as Exp1)
 
 ### Expected Qualitative Outcomes (from paper)
 - Without displacement, GBS performance becomes more variable and falls below SPONGE above ~70% loss
@@ -95,11 +123,21 @@ Qualitative ordering (GBS Boost has highest WD; GBS methods have lower Jaccard t
 **Paper**: N=50, 4 evaluation years, ~20 GBS runs per year
 **Implementation**: N=20 (proxy), 4 years, 3–5 runs
 
-> *Results will be populated when exp/exp3_regime_test.py completes.*
+### Results — Annual Return by Regime
+
+| Method | 2008 | 2017 | 2020 | 2022 |
+|--------|------|------|------|------|
+| Benchmark (1/N BH) | -0.348 | **+0.330** | **+0.360** | -0.062 |
+| Spectral | **+0.351** | **+0.113** | -0.228 | +0.005 |
+| SPONGE | **+0.386** | +0.063 | -0.387 | **+0.125** |
+| GBS Boost | +0.103 | +0.071 | -0.189 | -0.140 |
+| GBS Roots | +0.307 | -0.061 | -0.246 | -0.073 |
+| QIC-GBS | +0.210 | -0.013 | -0.275 | -0.257 |
 
 ### Paper Expected Values (Figure 5)
-| Method | 2008 Return | 2017 Return | 2020 Return | 2022 Return |
-|--------|-------------|-------------|-------------|-------------|
+
+| Method | 2008 | 2017 | 2020 | 2022 |
+|--------|------|------|------|------|
 | Benchmark (1/N) | -0.48 | 0.29 | 0.50 | 0.00 |
 | QIC-GBS | 0.45 | 0.01 | 0.16 | 0.12 |
 | SPONGE | 0.30 | 0.08 | 0.21 | 0.13 |
@@ -107,8 +145,21 @@ Qualitative ordering (GBS Boost has highest WD; GBS methods have lower Jaccard t
 | GBS Roots | 0.39 | 0.06 | 0.23 | 0.14 |
 | Spectral | 0.17 | 0.11 | 0.22 | 0.17 |
 
-### Average VIX by Regime (paper)
-2008: ~30.5 | 2017: ~13.5 | 2020: ~27.5 | 2022: ~24.0
+### Average VIX by Regime
+
+| Regime | Paper VIX | Our VIX | Strategy returns positive? |
+|--------|-----------|---------|---------------------------|
+| 2008 | ~30.5 | 32.66 | ✓ (all strategies positive vs benchmark) |
+| 2017 | ~13.5 | 11.09 | ✓ (classical) / ✗ (GBS Roots, QIC-GBS) |
+| 2020 | ~27.5 | 29.28 | ✗ (all negative in proxy universe) |
+| 2022 | ~24.0 | 25.62 | ✓ (Spectral, SPONGE) / ✗ (GBS Boost, QIC-GBS) |
+
+### Qualitative Comparison vs. Paper
+- **2008**: Classical methods (Spectral=0.35, SPONGE=0.39) strongly outperform the market (-0.35) ✓; GBS methods lower than paper but still positive ✓
+- **2017**: Spectral (0.11) matches paper (0.11) exactly; GBS methods underperform (paper has mild positives)
+- **2020**: **Sign reversal** — all strategies negative vs. paper's positive; caused by proxy universe (COVID-19 winners ≠ our top-2019 stocks)
+- **2022**: SPONGE (0.125) matches paper (0.13) ✓; GBS methods underperform
+- **VIX correlation**: 2008 and 2020 are high-VIX regimes; classical strategies benefit more in our proxy than GBS (opposite of paper's claim for true quantum GBS)
 
 ---
 

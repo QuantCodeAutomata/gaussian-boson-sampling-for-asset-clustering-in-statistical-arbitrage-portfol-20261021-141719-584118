@@ -1,0 +1,77 @@
+{
+  "regime_returns": {
+    "2008": {
+      "benchmark": -0.3484355395502755,
+      "spectral": 0.35122835362439986,
+      "sponge": 0.38573196061716375,
+      "gbs_boost": 0.10340914291422905,
+      "gbs_roots": 0.3066151785728257,
+      "qic_gbs": 0.2098557109418282
+    },
+    "2017": {
+      "benchmark": 0.3295849652913767,
+      "spectral": 0.11340418839535897,
+      "sponge": 0.06312300995045113,
+      "gbs_boost": 0.07064744244571215,
+      "gbs_roots": -0.06060446777369888,
+      "qic_gbs": -0.013296379553351648
+    },
+    "2020": {
+      "benchmark": 0.3599758373824715,
+      "spectral": -0.22794594564556014,
+      "sponge": -0.38723072704967304,
+      "gbs_boost": -0.18888536100873307,
+      "gbs_roots": -0.2462447625005176,
+      "qic_gbs": -0.27534944625311625
+    },
+    "2022": {
+      "benchmark": -0.062273426082002814,
+      "spectral": 0.005496026222167982,
+      "sponge": 0.12483972746165453,
+      "gbs_boost": -0.1395276692898311,
+      "gbs_roots": -0.07313464270569596,
+      "qic_gbs": -0.25652859140692535
+    }
+  },
+  "vix_averages": {
+    "2008": 32.663611086588055,
+    "2017": 11.0902390499039,
+    "2020": 29.277103212144638,
+    "2022": 25.623904467578903
+  },
+  "assumptions": [
+    "N=20 used instead of paper N=50 (compute constraint)",
+    "n_runs=3 (GBS), 5 (classical) instead of paper values",
+    "yfinance replaces CRSP"
+  ],
+  "paper_reference": {
+    "2008": {
+      "spectral": 0.17,
+      "sponge": 0.3,
+      "gbs_boost": 0.38,
+      "gbs_roots": 0.39,
+      "benchmark": -0.48
+    },
+    "2017": {
+      "spectral": 0.11,
+      "sponge": 0.08,
+      "gbs_boost": 0.06,
+      "gbs_roots": 0.06,
+      "benchmark": 0.29
+    },
+    "2020": {
+      "spectral": 0.22,
+      "sponge": 0.21,
+      "gbs_boost": 0.31,
+      "gbs_roots": 0.23,
+      "benchmark": 0.5
+    },
+    "2022": {
+      "spectral": 0.17,
+      "sponge": 0.13,
+      "gbs_boost": 0.08,
+      "gbs_roots": 0.14,
+      "benchmark": 0.0
+    }
+  }
+}

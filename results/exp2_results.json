@@ -1,0 +1,140 @@
+{
+  "metrics_by_loss": {
+    "0.0": {
+      "spectral": {
+        "annual_return_mean": -0.1594539705202771,
+        "annual_return_std": 0.0007725859861732297,
+        "weighted_density_mean": 0.4334766328205846
+      },
+      "sponge": {
+        "annual_return_mean": -0.04333703473340149,
+        "annual_return_std": 0.014511780047353082,
+        "weighted_density_mean": 0.43531549249779644
+      },
+      "gbs_boost": {
+        "annual_return_mean": -0.06795913685981254,
+        "annual_return_std": 0.025812720611221557,
+        "weighted_density_mean": 0.5419560791221664
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.03634846223783942,
+        "annual_return_std": 0.0718138542115211,
+        "weighted_density_mean": 0.724962902953441
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.11947746244715907,
+        "annual_return_std": 0.03282165802745235,
+        "weighted_density_mean": 0.5255636166372045
+      },
+      "random": {
+        "annual_return_mean": -0.009650020164886919,
+        "annual_return_std": 0.10742816970527289,
+        "weighted_density_mean": 0.28387502984895774
+      }
+    },
+    "0.3": {
+      "spectral": {
+        "annual_return_mean": -0.1594539705202771,
+        "annual_return_std": 0.0007725859861732297,
+        "weighted_density_mean": 0.4334766328205846
+      },
+      "sponge": {
+        "annual_return_mean": -0.04333703473340149,
+        "annual_return_std": 0.014511780047353082,
+        "weighted_density_mean": 0.43531549249779644
+      },
+      "gbs_boost": {
+        "annual_return_mean": -0.06626250237997355,
+        "annual_return_std": 0.06240081928560021,
+        "weighted_density_mean": 0.5760197897608449
+      },
+      "gbs_roots": {
+        "annual_return_mean": 0.005295676010146207,
+        "annual_return_std": 0.06305601011073532,
+        "weighted_density_mean": 0.7703138948503442
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.01665122900826632,
+        "annual_return_std": 0.07409833487656091,
+        "weighted_density_mean": 0.5195241585330862
+      },
+      "random": {
+        "annual_return_mean": -0.009650020164886919,
+        "annual_return_std": 0.10742816970527289,
+        "weighted_density_mean": 0.28387502984895774
+      }
+    },
+    "0.6": {
+      "spectral": {
+        "annual_return_mean": -0.1594539705202771,
+        "annual_return_std": 0.0007725859861732297,
+        "weighted_density_mean": 0.4334766328205846
+      },
+      "sponge": {
+        "annual_return_mean": -0.04333703473340149,
+        "annual_return_std": 0.014511780047353082,
+        "weighted_density_mean": 0.43531549249779644
+      },
+      "gbs_boost": {
+        "annual_return_mean": -0.11069517346876612,
+        "annual_return_std": 0.08333533024631723,
+        "weighted_density_mean": 0.654948743292448
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.017432183729030288,
+        "annual_return_std": 0.04929641655532797,
+        "weighted_density_mean": 0.7960058089913055
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.1618169905963497,
+        "annual_return_std": 0.0450457197682218,
+        "weighted_density_mean": 0.5001165530901001
+      },
+      "random": {
+        "annual_return_mean": -0.009650020164886919,
+        "annual_return_std": 0.10742816970527289,
+        "weighted_density_mean": 0.28387502984895774
+      }
+    },
+    "0.9": {
+      "spectral": {
+        "annual_return_mean": -0.1594539705202771,
+        "annual_return_std": 0.0007725859861732297,
+        "weighted_density_mean": 0.4334766328205846
+      },
+      "sponge": {
+        "annual_return_mean": -0.04333703473340149,
+        "annual_return_std": 0.014511780047353082,
+        "weighted_density_mean": 0.43531549249779644
+      },
+      "gbs_boost": {
+        "annual_return_mean": 0.039282572839369534,
+        "annual_return_std": 0.03431164909798533,
+        "weighted_density_mean": 0.7983140629238941
+      },
+      "gbs_roots": {
+        "annual_return_mean": -0.0015415674561231052,
+        "annual_return_std": 0.019214426461303936,
+        "weighted_density_mean": 0.7976115242969156
+      },
+      "qic_gbs": {
+        "annual_return_mean": -0.03430034923497305,
+        "annual_return_std": 0.0999210039764665,
+        "weighted_density_mean": 0.3496931840932276
+      },
+      "random": {
+        "annual_return_mean": -0.009650020164886919,
+        "annual_return_std": 0.10742816970527289,
+        "weighted_density_mean": 0.28387502984895774
+      }
+    }
+  },
+  "deviations": [
+    "Displacement arm NOT implemented \u2014 requires Strawberry Fields Gaussian-state simulation"
+  ],
+  "assumptions": [
+    "N=25 used instead of paper N=50 (compute constraint)",
+    "loss_rates=[0,0.3,0.6,0.9] subset instead of 0..0.9 in 0.1 steps",
+    "n_runs=3 (GBS), 5 (classical) instead of paper 50/100-200"
+  ]
+}
